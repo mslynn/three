@@ -2,14 +2,11 @@ import * as THREE from 'three';
 import {
     OrbitControls
 } from 'three/addons/controls/OrbitControls.js';
-// import mesh from './mesh.js';
-// import mesh2 from './mesh2.js';
-import mesh3 from './mesh3.js';
+import mesh from './mesh3.js';
 
 const scene = new THREE.Scene();
 
-// scene.add(mesh, mesh2, mesh3);
-scene.add( mesh3);
+scene.add(mesh);
 
 const pointLight = new THREE.PointLight(0xffffff, 10000);
 pointLight.position.set(80, 80, 80);

@@ -2,14 +2,11 @@ import * as THREE from 'three';
 import {
     OrbitControls
 } from 'three/addons/controls/OrbitControls.js';
-// import mesh from './mesh.js';
-// import mesh2 from './mesh2.js';
-import mesh3 from './mesh3.js';
+import mesh from './mesh4.js';
 
 const scene = new THREE.Scene();
 
-// scene.add(mesh, mesh2, mesh3);
-scene.add( mesh3);
+scene.add(mesh);
 
 const pointLight = new THREE.PointLight(0xffffff, 10000);
 pointLight.position.set(80, 80, 80);
@@ -21,8 +18,8 @@ scene.add(axesHelper);
 const width = window.innerWidth;
 const height = window.innerHeight;
 
-const camera = new THREE.PerspectiveCamera(60, width / height, 1, 1000);
-camera.position.set(200, 200, 200);
+const camera = new THREE.PerspectiveCamera(60, width / height, 1, 10000);
+camera.position.set(90, 230, 1175);
 camera.lookAt(0, 0, 0);
 
 const renderer = new THREE.WebGLRenderer();
@@ -38,3 +35,8 @@ render();
 document.body.append(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
+
+controls.addEventListener('change', () => {
+    console.log(camera.position);
+})
+
